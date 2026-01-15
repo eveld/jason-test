@@ -37,5 +37,7 @@ RUN docker --version && \
 # Set working directory
 WORKDIR /root
 
-# Default to bash shell
-CMD ["/bin/bash"]
+# Keep the dind entrypoint to start dockerd
+# The docker:dind image has dockerd-entrypoint.sh which starts dockerd
+# We just set bash as the default shell for interactive use
+SHELL ["/bin/bash", "-c"]

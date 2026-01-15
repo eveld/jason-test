@@ -1,0 +1,12 @@
+{
+  "name": "chainguard-demo-app",
+  "version": "1.0.0",
+  "description": "Sample app for Chainguard security demo",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

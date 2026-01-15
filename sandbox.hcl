@@ -31,23 +31,9 @@ resource "container" "workstation" {
   # Enable privileged mode for Docker-in-Docker
   privileged = true
 
-  # Mount setup scripts
+  # Mount lab files (app, scripts, reports directories)
   volume {
-    source      = "scripts/setup"
-    destination = "/tmp/setup"
+    source      = "files"
+    destination = "/root/lab"
   }
-}
-
-# Setup: Pre-pull Docker images
-# Note: All tools are pre-installed in the custom image
-resource "exec" "prepull_images" {
-  target = resource.container.workstation
-  script = "/tmp/setup/prepull_images.sh"
-}
-
-# Setup: Create sample application
-resource "exec" "setup_app" {
-  target     = resource.container.workstation
-  script     = "/tmp/setup/setup_app.sh"
-  depends_on = ["resource.exec.prepull_images"]
 }
