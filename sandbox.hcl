@@ -25,7 +25,7 @@ resource "container" "workstation" {
   # Memory and CPU resources
   resources {
     memory = 4096  # 4 GB
-    cpu    = 2     # 2 vCPUs
+    cpu    = 2000     # 2 vCPUs
   }
 
   # Enable privileged mode for Docker-in-Docker
