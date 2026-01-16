@@ -5,14 +5,14 @@ resource "lab" "chainguard_security" {
 
   settings {
     timelimit {
-      duration   = "45"
-      extend     = "15"
+      duration   = "45m"
+      extend     = "15m"
       show_timer = true
     }
 
     idle {
       enabled      = true
-      timeout      = "30"
+      timeout      = "30m"
       show_warning = true
     }
 
