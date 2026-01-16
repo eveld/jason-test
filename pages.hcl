@@ -39,8 +39,8 @@ resource "page" "switch_application" {
   file  = "instructions/02_chainguard_images/switch_application.md"
 
   activities = {
-    "update_dockerfile"   = resource.task.update_dockerfile
-    "build_secure_image"  = resource.task.build_secure_image
+    "update_dockerfile"  = resource.task.update_dockerfile
+    "build_secure_image" = resource.task.build_secure_image
   }
 }
 
@@ -62,8 +62,8 @@ resource "page" "configure_libraries" {
   file  = "instructions/03_secure_dependencies/configure_libraries.md"
 
   activities = {
-    "configure_package_manager"     = resource.task.configure_package_manager
-    "install_secure_dependencies"   = resource.task.install_secure_dependencies
+    "configure_package_manager"   = resource.task.configure_package_manager
+    "install_secure_dependencies" = resource.task.install_secure_dependencies
   }
 }
 

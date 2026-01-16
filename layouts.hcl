@@ -1,7 +1,7 @@
 # Split-screen layout: Terminal/Editor on left, Instructions on right
 resource "layout" "split_terminal_instructions" {
   column {
-    width = 60
+    width = "60"
 
     tab "terminal" {
       title  = "Terminal"
@@ -15,8 +15,9 @@ resource "layout" "split_terminal_instructions" {
   }
 
   column {
-    width = 40
+    width = "40"
 
-    instructions {}
+    instructions {
+    }
   }
 }
